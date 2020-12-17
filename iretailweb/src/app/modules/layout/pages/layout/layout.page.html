@@ -1,0 +1,23 @@
+<div id="wrapper">
+    <header class="main-header">
+        <nav class="navbar">
+            <span class="brand">
+                iRetail
+            </span>
+        </nav>
+    </header>
+    <div [ngClass]="mainViewClass">
+        <aside class="main-sidebar sidebar-light">
+            <div class="sidebar" style="height: auto;">
+
+            </div>
+        </aside>
+        <div>
+            <div class="container-fluid">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <footer class="page-footer">
+        </footer>
+    </div>
+</div>
