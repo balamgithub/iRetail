@@ -1,10 +1,6 @@
 ﻿using iRetailService.Gateway.Interface;
 using iRetailService.Model;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace iRetailService.controller
@@ -20,7 +16,7 @@ namespace iRetailService.controller
         }
 
         [HttpGet]
-        public async Task<IEnumerable<PeopleCountModel>> Get()
+        public async Task<PeopleCountModel> Get()
         {
             var response = await iAPIClient.GetPeopleCount("");
             return response;
