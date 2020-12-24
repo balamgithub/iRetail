@@ -1,67 +1,33 @@
-import { Component, AfterViewInit } from '@angular/core';
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
-import { LayoutService } from '../../service/layout.service';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SocialAuthService, SocialUser } from 'angularx-social-login';
 
 @Component({
   moduleId: 'LayoutComponent',
   selector: 'layout',
   templateUrl: 'layout.page.html',
   styleUrls: ['layout.page.css'],
-  animations: [
-    trigger('slideInOut', [
-      state(
-        'in',
-        style({
-          transform: 'translate3d(-100%, 0, 0)',
-        })
-      ),
-      state(
-        'out',
-        style({
-          transform: 'translate3d(0, 0, 0)',
-        })
-      ),
-      transition('in => out', animate('200ms ease-in-out')),
-      transition('out => in', animate('200ms ease-in-out')),
-    ]),
-  ],
 })
-export class LayoutComponent implements AfterViewInit {
-  showSideBar = true;
-  menus: any;
-  activeURL: any;
-  viewFotterClass = 'page-content-wrapper';
+export class LayoutComponent {
   mainViewClass = 'page-container';
-  menuColors: any = [
-    'txt-indigo',
-    'txt-orange',
-    'txt-green',
-    'txt-themeRed',
-    'txt-warm',
-    'txt-info',
-    'txt-brown',
-    'txt-green',
-  ];
-  constructor(private _route: Router) {
-    this.setMenu();
+  user: SocialUser;
+  loggedIn: boolean;
+  constructor(private _route: Router, private authService: SocialAuthService) {
   }
 
-  ngAfterViewInit() {
-    this._route.navigate(['dashboard']);
+  ngOnInit() {
+    this.loggedIn = (localStorage.getItem('userdetails') !== undefined && localStorage.getItem('userdetails') !== null);
+    if (!this.loggedIn)
+      this._route.navigate(['']);
+    else {
+      this.user = JSON.parse(localStorage.getItem('userdetails'));
+    }
   }
 
-  setMenu() {
-
-  }
-
-  setMenusArray() {
-
+  logout() {
+    this.authService.signOut().then(data => {
+      localStorage.removeItem('userdetails')
+      this._route.navigate(['']);
+    });
   }
 }

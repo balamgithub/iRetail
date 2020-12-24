@@ -9,10 +9,12 @@
     margin-bottom: 20px;
 }
 
-.reportGrid > .dataTables_info, .reportGrid > .dt-buttons {
+.reportGrid>.dataTables_info,
+.reportGrid>.dt-buttons {
     width: 50% !important;
     float: left !important;
 }
+
 
 /* User Profile */
 
@@ -75,4 +77,10 @@
 .dropdown.open .dropdown-menu {
     max-height: 200px;
     opacity: 1;
+}
+
+.customPhoto {
+    border-radius: 25px;
+    height: 40px;
+    width: 40px;
 }

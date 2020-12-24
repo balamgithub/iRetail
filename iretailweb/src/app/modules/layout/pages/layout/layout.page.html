@@ -1,8 +1,10 @@
 <div id="wrapper">
     <header class="main-header">
         <nav class="navbar">
-            <span class="brand">
-                iRetail
+            <span class="brand pull-right p5" style="line-height: 18px;">
+                <div class="col-md-6">   Hi {{user.name}}
+                    <a *ngIf="loggedIn" style="text-decoration: underline;" (click)="logout()">Logout</a></div>
+                <div class="col-md-6"> <img [src]="user.photoUrl" class="customPhoto" /></div>
             </span>
         </nav>
     </header>
