@@ -26,7 +26,7 @@ import { environment } from 'src/environments/environment';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              environment.googleClientID
+              environment.GoogleClientID
             )
           }
         ]
