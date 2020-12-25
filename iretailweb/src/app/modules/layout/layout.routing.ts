@@ -10,6 +10,11 @@ const layoutRoutes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('../dashboard/dashboard.module').then((m) => m.DashboardModule)
+      },
+      {
+        path: 'suggestionhistory',
+        loadChildren: () =>
+          import('../suggestion-history/suggestion-history.module').then((m) => m.SuggestionHistoryModule)
       }
     ],
   }
