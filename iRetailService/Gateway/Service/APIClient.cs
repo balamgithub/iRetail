@@ -1,4 +1,5 @@
-﻿using iRetailService.Gateway.Interface;
+﻿using Azure.Messaging.ServiceBus;
+using iRetailService.Gateway.Interface;
 using iRetailService.Model;
 using Newtonsoft.Json;
 using System;
@@ -16,6 +17,7 @@ namespace iRetailService.Gateway.Service
     {
         //public HttpClient Client { get; }
         private readonly IHttpClientFactory _clientFactory;
+        private static List<string> _messages = new List<string>();
 
         public APIClient(IHttpClientFactory clientFactory)
         {
@@ -69,6 +71,52 @@ namespace iRetailService.Gateway.Service
             {
                 throw ex;
             }
+        }
+
+        public async Task<List<string>> GetMessages()
+        {
+            try
+            {
+                _messages.Clear();
+
+                await using (ServiceBusClient client = new ServiceBusClient("Endpoint=sb://iretailtest.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=BacWf1RFNNS8WdtXq+2dMBH6isGoJaH5cdpc6LCvq4s="))
+                {
+                    // create a processor that we can use to process the messages
+                    ServiceBusProcessor processor = client.CreateProcessor("messagetest1", new ServiceBusProcessorOptions());
+
+                    // add handler to process messages
+                    processor.ProcessMessageAsync += MessageHandler;
+
+                    // add handler to process any errors
+                    processor.ProcessErrorAsync += ErrorHandler;
+
+                    // start processing 
+                    await processor.StartProcessingAsync();
+
+                    await processor.StopProcessingAsync();
+
+                    return _messages;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        // handle received messages
+        static async Task MessageHandler(ProcessMessageEventArgs args)
+        {
+            string body = args.Message.Body.ToString();
+            _messages.Add(body);
+            // complete the message. messages is deleted from the queue. 
+            await args.CompleteMessageAsync(args.Message);
+        }
+
+        // handle any errors when receiving messages
+        static Task ErrorHandler(ProcessErrorEventArgs args)
+        {
+            return Task.CompletedTask;
         }
     }
 

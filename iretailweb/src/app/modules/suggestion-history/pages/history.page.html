@@ -1,0 +1,28 @@
+<div class="container m-t-15">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box">
+                <div class="box-title">
+                    <div class="box-caption">
+                        <span>Suggestion History</span>
+                    </div>
+                    <div class="box-action">
+                        <div class="col-md-12 pull-right">
+                            <input type="text" name="daterangeInput" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)" />
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-panel">
+                                <table datatable [dtOptions]="dtOptions" class="table table-bordered table-striped table-responsive" style="width: 100%;">
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
