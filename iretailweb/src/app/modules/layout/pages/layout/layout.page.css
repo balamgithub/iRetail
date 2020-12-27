@@ -1,0 +1,86 @@
+.menuIcon {
+    margin-top: 28px;
+    cursor: pointer;
+}
+
+.form-radio,
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.reportGrid>.dataTables_info,
+.reportGrid>.dt-buttons {
+    width: 50% !important;
+    float: left !important;
+}
+
+
+/* User Profile */
+
+.dropdown .first_dd i:nth-child(1) {
+    margin-right: 2px;
+}
+
+.dropdown .first_dd i:nth-child(2) {
+    font-size: 13px;
+    font-style: normal;
+}
+
+.dropdown .first_dd i:nth-child(3) {
+    position: absolute;
+    right: 20px;
+    top: 30px;
+}
+
+.dropdown .second_dd {
+    line-height: 1.4;
+}
+
+.dropdown .second_dd i:nth-child(1) {
+    font-size: 11px;
+    color: #8a8a8a;
+    padding-left: 28px;
+    font-style: normal;
+    position: relative;
+}
+
+.dropdown .sub_menu {
+    width: 100%;
+    /* top: -9px; */
+    border-radius: 0px;
+    transition: all ease 0.3s;
+    max-height: 100px;
+}
+
+.dropdown .sub_menu li a {
+    padding: 6px 15px;
+    font-size: 12px;
+    color: #666666;
+    font-weight: 600;
+}
+
+.dropdown .sub_menu li a:hover,
+.dropdown .sub_menu li a:focus {
+    color: #262626;
+}
+
+.dropdown .dropdown-menu {
+    transition: all 0.5s;
+    border-top: 0px;
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.open .dropdown-menu {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.customPhoto {
+    border-radius: 25px;
+    height: 40px;
+    width: 40px;
+}

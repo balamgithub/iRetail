@@ -1,0 +1,606 @@
+/*// component css goes here
+  // .my-drop-zone { border: dotted 3px lightgray; height: 135px;}
+  //   .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over 
+  //   // .another-file-over-class { border: dotted 3px green; }
+  //   html, body { height: 100%; }*/
+
+  .my-drop-zone {
+    border: dotted 3px lightgray;
+}
+
+.nv-file-over {
+    border: dotted 3px red;
+}
+
+
+/* Default class applied to drop zones on over */
+
+.another-file-over-class {
+    border: dotted 3px green;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.MTS-dropZOne {
+    border: dashed 2px #c2cdda;
+    border-radius: 3px;
+    padding: 60px 0 0;
+    background-color: #fafafa;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.MTS-dropZOne img {
+    vertical-align: middle;
+}
+
+.MTS-dropZOne h3 {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.upload {
+    padding: 8px 0px;
+    background-color: #1e88e5;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    border-radius: 4px;
+    width: 150px;
+    margin: 12px auto 2px auto;
+}
+
+.MTS-uploadQueue h3 {
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 5px;
+    background-color: #f8fcff;
+    border-radius: 5px;
+}
+
+.MTS-uploadQueue .progress {
+    height: 2px;
+    margin-bottom: 0px;
+}
+
+.MTS-uploadQueue .upload-card {
+    padding: 10px;
+    background-color: #F5F6FA;
+    margin-top: 15px;
+}
+
+.MTS-uploadQueue .upload-card h5 {
+    font-size: 14px;
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.MTS-uploadQueue .upload-card span {
+    top: 8px;
+    position: relative;
+    cursor: pointer;
+}
+
+.MTS-uploadQueue .upload-card span {
+    position: relative;
+    top: 0px;
+    margin-right: 10px;
+}
+
+.MTS-uploadQueue .upload-card span.success .material-icons {
+    background-color: #43a047;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 3px;
+    height: 25px;
+    width: 25px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.MTS-uploadQueue .upload-card span.cancel .material-icons {
+    background-color: #ffb300;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 3px;
+    height: 25px;
+    width: 25px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.MTS-uploadQueue .upload-card span.remove .material-icons {
+    background-color: #e53935;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 3px;
+    height: 25px;
+    width: 25px;
+    line-height: 18px;
+    text-align: center;
+}
+
+.highcharts-container {
+    width: 100% !important;
+}
+
+.darkbluebg {
+    background-color: #5e6db3;
+}
+
+.well {
+    margin-bottom: 0px;
+    box-shadow: none;
+}
+
+.MTS-dropZOne {
+    border: 0px;
+    background-color: #fff;
+}
+
+.MTS-uploadQueue .upload-card {
+    margin-top: 0px;
+    background-color: #ebeeff;
+    border-radius: 4px;
+    border: 1px solid #e8e8e8;
+}
+
+.h3Class {
+    border: dashed 1px #ccc;
+    margin: 0px;
+    padding: 50px 6px;
+}
+
+.loaninfo-back {
+    border-radius: 50%;
+    padding: 0;
+    height: 23px;
+    width: 23px;
+    /* vertical-align: middle; */
+    /* text-align: center; */
+    /* line-height: 11px; */
+    margin-top: 5px;
+    font-size: 0px;
+}
+
+.loaninfo-back i {
+    font-size: 15px;
+}
+
+.breadcrumb li,
+.breadcrumb li a {
+    font-size: 13px;
+    color: #ccc;
+}
+
+.breadcrumb li.active:last-child a {
+    color: #1e88e5;
+}
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #aaa;
+    content: "\f105";
+    font-family: 'FontAwesome'
+}
+
+.breadcrumb {
+    margin-bottom: 0px;
+    background-color: #fff;
+}
+
+.title_ellipsis {
+    text-overflow: ellipsis;
+    width: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.w32 {
+    width: 40%;
+}
+
+.w59 {
+    width: 67%;
+}
+
+.tableLoading {
+    color: #336699;
+    font-weight: 600;
+    font-size: 3px;
+}
+
+.totalCountLable {
+    border-top: 1px solid #eee;
+    background: #eee;
+}
+
+.countLoan {
+    border: 1px solid #eee;
+    text-align: center;
+    border-radius: 10px;
+}
+.percentageWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+.green .progress,
+.red .progress,
+.orange .progress {
+    position: relative;
+    border-radius: 50%;
+}
+
+.green .progress,
+.red .progress,
+.orange .progress {
+    width: 200px;
+    height: 200px;
+}
+
+.green .progress {
+    border: 5px solid #53fc53;
+}
+
+.green .progress {
+    box-shadow: 0 0 20px #029502;
+}
+
+.green .progress,
+.red .progress,
+.orange .progress {
+    transition: all 1s ease;
+}
+
+.green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+    width: 190px;
+    height: 190px;
+}
+
+
+/* .green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+    border: 5px solid #1a1a1a;
+} */
+
+.green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+    transition: all 1s ease;
+}
+
+.green .progress .inner .water,
+.red .progress .inner .water,
+.orange .progress .inner .water {
+    position: absolute;
+    z-index: 1;
+    width: 150%;
+    height: 150%;
+    left: -30%;
+    border-radius: 40%;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-name: spin;
+}
+
+.green .progress .inner .water {
+    top: 25%;
+}
+
+.green .progress .inner .water {
+    background: rgba(83, 252, 83, 0.5);
+}
+
+.green .progress .inner .water,
+.red .progress .inner .water,
+.orange .progress .inner .water {
+    transition: all 1s ease;
+}
+
+.green .progress .inner .water,
+.red .progress .inner .water,
+.orange .progress .inner .water {
+    animation-duration: 10s;
+}
+
+.green .progress .inner .water {
+    box-shadow: 0 0 20px #03bc03;
+}
+
+.green .progress .inner .glare,
+.red .progress .inner .glare,
+.orange .progress .inner .glare {
+    position: absolute;
+    top: -120%;
+    left: -120%;
+    z-index: 5;
+    width: 200%;
+    height: 200%;
+    transform: rotate(45deg);
+    border-radius: 50%;
+}
+
+.green .progress .inner .glare,
+.red .progress .inner .glare,
+.orange .progress .inner .glare {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.green .progress .inner .glare,
+.red .progress .inner .glare,
+.orange .progress .inner .glare {
+    transition: all 1s ease;
+}
+
+.green .progress .inner .percent,
+.red .progress .inner .percent,
+.orange .progress .inner .percent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.green .progress .inner .percent,
+.red .progress .inner .percent,
+.orange .progress .inner .percent {
+    line-height: 190px;
+    font-size: 60px;
+}
+
+.green .progress .inner .percent {
+    color: #03c603;
+}
+
+@-moz-keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+/* 
+.green .progress .inner .percent {
+    text-shadow: 0 0 10px #029502;
+} */
+
+.green .progress .inner .percent,
+.red .progress .inner .percent,
+.orange .progress .inner .percent {
+    transition: all 1s ease;
+}
+
+.red {
+    margin-top: 15px;
+}
+
+.red .progress {
+    border: 5px solid #ed3b3b;
+}
+
+.red .progress {
+    box-shadow: 0 0 20px #7a0b0b;
+}
+
+.red .progress .inner .water {
+    top: 75%;
+}
+
+.red .progress .inner .water {
+    background: rgba(237, 59, 59, 0.5);
+}
+
+.red .progress .inner .water {
+    box-shadow: 0 0 20px #9b0e0e;
+}
+
+.red .progress .inner .percent {
+    color: #a30f0f;
+}
+
+
+/* .red .progress .inner .percent {
+    text-shadow: 0 0 10px #7a0b0b;
+} */
+
+.orange {
+    margin-top: 15px;
+}
+
+.orange .progress {
+    border: 5px solid #f07c3e;
+}
+
+.orange .progress {
+    box-shadow: 0 0 20px #7e320a;
+}
+
+.orange .progress .inner .water {
+    top: 50%;
+}
+
+.orange .progress .inner .water {
+    background: rgba(240, 124, 62, 0.5);
+}
+
+.orange .progress .inner .water {
+    box-shadow: 0 0 20px #a0400c;
+}
+
+.orange .progress .inner .percent {
+    color: #a8430d;
+}
+
+.ScoreCard h2 {
+    font-weight: 400;
+}
+
+.ScoreCard h2 small {
+    font-size: 50%;
+}
+
+.ScoreCard_Icon {
+    font-size: 56px;
+    padding-top: 3px;
+    line-height: 66px;
+}
+
+
+@media (min-width: 768px) {
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active + .carousel-item,
+    .carousel-inner .active + .carousel-item + .carousel-item {
+      display: block;
+    }
+  
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+      transition: none;
+    }
+  
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+      position: relative;
+      transform: translate3d(0, 0, 0);
+    }
+  
+    .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+      position: absolute;
+      top: 0;
+      right: -33.3333%;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+  
+    /* left or forward direction */
+    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(-100%, 0, 0);
+      visibility: visible;
+    }
+  
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      visibility: visible;
+    }
+  
+    /* right or prev direction */
+    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+      position: relative;
+      transform: translate3d(100%, 0, 0);
+      visibility: visible;
+      display: block;
+      visibility: visible;
+    }
+  }
+  
+
+  .carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+}
+/* The controlsy */
+.carousel-control {
+	left: -12px;
+    height: 40px;
+	width: 40px;
+    background: none repeat scroll 0 0 #222222;
+    border: 4px solid #FFFFFF;
+    border-radius: 23px 23px 23px 23px;
+    margin-top: 90px;
+}
+.carousel-control.right {
+    right: -12px;
+    left:  auto;
+}
+/* The indicators */
+.carousel-indicators {
+	right: 50%;
+	top: auto;
+	bottom: -10px;
+	margin-right: -19px;
+}
+/* The colour of the indicators */
+.carousel-indicators li {
+	background: #cecece;
+}
+.carousel-indicators .active {
+background: #428bca;
+}
+
+.buttonSize
+{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 0;
+}
