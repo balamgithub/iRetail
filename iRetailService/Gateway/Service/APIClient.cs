@@ -13,48 +13,61 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using Microsoft.Extensions.Configuration;
 namespace iRetailService.Gateway.Service
 {
     public class APIClient : iAPIClient
     {
         //public HttpClient Client { get; }
         private readonly IHttpClientFactory _clientFactory;
+        private readonly IConfiguration _configuration;
         private static List<string> _messages = new List<string>();
+
 
         private static string _bus_connectionstring = "Endpoint=sb://iretailtest.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=BacWf1RFNNS8WdtXq+2dMBH6isGoJaH5cdpc6LCvq4s=";
         private static string _queue_name = "messagetest1";
         private static QueueClient _client;
         private FirestoreDb fireStoreDb;
 
-        public APIClient(IHttpClientFactory clientFactory)
+        public APIClient(IHttpClientFactory clientFactory, IConfiguration configuration)
+
         {
             // httpClient.BaseAddress = new Uri("https://apis.sentient.io/microservices/cv/peoplecounting/");
             //// httpClient.DefaultRequestHeaders.Add("content-type", "application/json");
             // httpClient.DefaultRequestHeaders.Add("x-api-key", "CD6A2161F6C14D97AEF1"); 
             // Client = httpClient;
             _clientFactory = clientFactory;
+
             string filepath = @"inputfiles\iretaildb-4bac09deb4f6.json";
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", filepath);
             string projectId = "iretaildb";
             fireStoreDb = FirestoreDb.Create(projectId);
+
+
+            _configuration = configuration;
 
         }
         public async Task<PeopleCountModel> GetPeopleCount(string videoPath)
         {
             try
             {
+
                 List<string> _products = new List<string>() { "Apple", "Samsung", "Nokia", "Redmi" };
-                byte[] video = File.ReadAllBytes(Path.GetFullPath(@"inputfiles\1_1_crop (online-video-cutter.com).mp4"));
+       
+                byte[] video = File.ReadAllBytes(Path.GetFullPath(_configuration["Settings:VideoRepoPath"]));
+
                 string inputVideo = Convert.ToBase64String(video, 0, video.Length);
                 var reqInput = new InputRequest() { video_base64 = inputVideo };
 
                 var httpClient = _clientFactory.CreateClient();
-                httpClient.BaseAddress = new Uri("https://apis.sentient.io/");
+                httpClient.BaseAddress = new Uri(_configuration["Settings:SentientMicroserviceBaseAddress"]);
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                httpClient.DefaultRequestHeaders.Add("x-api-key", "CD6A2161F6C14D97AEF1");
+                httpClient.DefaultRequestHeaders.Add("x-api-key", _configuration["Settings:SentientAPIKey"]);
 
-                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "microservices/cv/peoplecounting/v0.1/getpredictions");
+
+
+                HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, _configuration["Settings:SentientPeopleCountAPIEndPoint"]);
+
                 request.Content = new ObjectContent(typeof(InputRequest), reqInput, new JsonMediaTypeFormatter());
                 var response = await httpClient.SendAsync(request).ConfigureAwait(false);
                 if (response.IsSuccessStatusCode)
@@ -107,8 +120,15 @@ namespace iRetailService.Gateway.Service
                 return _objects;
             }
 
+
             return null;
         }
+
+               /* await using (ServiceBusClient client = new ServiceBusClient(_configuration["Settings:AzureServiceBusConnectionString"]))
+                {
+                    // create a processor that we can use to process the messages
+                    ServiceBusProcessor processor = client.CreateProcessor("messagetest1", new ServiceBusProcessorOptions());
+*/
 
         public async Task<object> setSuggestion()
         {
@@ -150,7 +170,7 @@ namespace iRetailService.Gateway.Service
             try
             {
                 _messages.Clear();
-                _client = new QueueClient(_bus_connectionstring, _queue_name);
+                _client = new QueueClient(_configuration["Settings:AzureServiceBusConnectionString"], _queue_name);
 
                 var _options = new MessageHandlerOptions(ExceptionReceived)
                 {
