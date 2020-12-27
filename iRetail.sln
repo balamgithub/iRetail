@@ -10,7 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iRetailService", "iRetailService\iRetailService.csproj", "{9752A32B-067E-4CC9-BDE0-62E5D3302E3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iRetailService", "iRetailService\iRetailService.csproj", "{9752A32B-067E-4CC9-BDE0-62E5D3302E3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
