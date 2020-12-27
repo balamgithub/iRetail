@@ -1,80 +1,31 @@
 <div class="container m-t-15">
-    <div class="row">
-        <div class="col-md-4">
-            <div class="box cust_box">
-                <div class="box-title m-b-0" [style.border-bottom]="'1px solid #eee' ">
-                    <div class="box-caption display-block w100p bcEllipsis text-center">
-                        <span>Test</span>
-                    </div>
-                </div>
-                <div class="box-body">
-                    <div class="form-group m0" style="cursor: default">
-                        <div class="text-center">test test</div>
-                    </div>
-                    <div class="row">
-                        <div class="ScoreCard col-md-8" style="cursor:pointer">
-                            <h1 [class]="'text-center txt-themeRed'">
-                                7
-                                <small class="txt-themeOrg"> / 10</small>
-                            </h1>
-                        </div>
-                        <div class="col-md-4">
-                            <span class="ScoreCard_Icon txt-green fa fa-arrow-circle-up"></span>
+    <div class="row" [cgBusy]="promise">
+        <!-- <div class="col-md-12 text-right m-b-10">
+            <input type="text" name="daterangeInput" daterangepicker [options]="options" (selected)="selectedDate($event, daterange)" />
+        </div> -->
+        <div *ngFor="let msg of queueMessages">
+            <div class="col-md-4">
+                <div class="box cust_box">
+                    <div class="box-title m-b-0" [style.border-bottom]="'1px solid #eee' ">
+                        <div class="box-caption display-block w100p bcEllipsis text-center">
+                            <span></span>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="box cust_box">
-                <div class="box-title m-b-0" [style.border-bottom]="'1px solid #eee' ">
-                    <div class="box-caption display-block w100p bcEllipsis text-center">
-                        <span>Test</span>
-                    </div>
-                </div>
-                <div class="box-body">
-                    <div class="form-group m0" style="cursor: default">
-                        <div class="text-center">test test</div>
-                    </div>
-                    <div class="row">
-                        <div class="ScoreCard col-md-8" style="cursor:pointer">
-                            <h1 [class]="'text-center txt-themeRed'">
-                                10
-                                <small class="txt-themeOrg"> / 10</small>
-                            </h1>
-                        </div>
-                        <div class="col-md-4">
-                            <span class="ScoreCard_Icon txt-themeOrg fa fa-minus-circle"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="box cust_box">
-                <div class="box-title m-b-0" [style.border-bottom]="'1px solid #eee' ">
-                    <div class="box-caption display-block w100p bcEllipsis text-center">
-                        <span>Test</span>
-                    </div>
-                </div>
-                <div class="box-body">
-                    <div class="form-group m0" style="cursor: default">
-                        <div class="text-center">test test</div>
-                    </div>
-                    <div class="row">
-                        <div class="ScoreCard col-md-8" style="cursor:pointer">
-                            <h1 [class]="'text-center txt-themeRed'">
-                                3
-                                <small class="txt-themeOrg"> / 10</small>
-                            </h1>
-                        </div>
-                        <div class="col-md-4">
-                            <span class="ScoreCard_Icon txt-themeRed fa fa-arrow-circle-down"></span>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{msg}}
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <button class="btn btn-success" (click)="messageAction(msg, true)" type="button">Approve</button>
+                            </div>
+                            <div class="col-md-6 text-center">
+                                <button class="btn btn-danger" (click)="messageAction(msg, false)" type="button">&nbsp;&nbsp;Reject&nbsp;&nbsp;</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
 </div>

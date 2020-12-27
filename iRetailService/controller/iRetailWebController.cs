@@ -1,7 +1,6 @@
 ﻿using iRetailService.Gateway.Interface;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,9 +17,9 @@ namespace iRetailService.controller
         }
 
         [HttpGet]
-        public async Task<List<string>> Get()
+        public List<string> Get()
         {
-            var response = await iAPIClient.GetMessages();
+            var response = iAPIClient.GetMessages();
             return response;
         }
     }

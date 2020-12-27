@@ -29,6 +29,7 @@
                             "src/assets/css/dataTables.bootstrap.min.css",
                             "src/assets/css/main.css",
                             "node_modules/ng2-daterangepicker/assets/daterangepicker.css",
+                            "node_modules/ngx-toastr/toastr.css",
                             "src/styles.css"
                         ],
                         "scripts": [

@@ -1,0 +1,22 @@
+[
+  {
+    "ProductName": "Samsung",
+    "PeopleCount": 20
+  },
+  {
+    "ProductName": "Apple",
+    "PeopleCount": 100
+  },
+  {
+    "ProductName": "Nokia",
+    "PeopleCount": 80
+  },
+  {
+    "ProductName": "Xiaomi",
+    "PeopleCount": 70
+  },
+  {
+    "ProductName": "Redmi",
+    "PeopleCount": 60
+  }
+]
