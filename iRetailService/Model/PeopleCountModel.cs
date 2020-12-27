@@ -1,11 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using Google.Cloud.Firestore;
+using System;
 
 namespace iRetailService.Model
 {
+    [FirestoreData]
     public class PeopleCountModel
     {
-        public int NoOfPeople { get; set; }
-        public List<PeopleModel> Appearing { get; set; }
+        [FirestoreProperty]
+        public Int64 PeopleCount { get; set; }
+        [FirestoreProperty]
+        public string ProductName { get; set; }
     }
 
     public class PeopleModel

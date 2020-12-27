@@ -16,7 +16,12 @@ namespace iRetailService
         {
             services.AddControllers();
             services.AddHttpClient();
-          //  services.AddHttpClient<iAPIClient, APIClient>();
+            services.AddCors(o => o.AddPolicy("OpenPolicy", builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            }));
+
+            //  services.AddHttpClient<iAPIClient, APIClient>();
             services.AddScoped<iAPIClient, APIClient>();
         }
 
@@ -29,7 +34,7 @@ namespace iRetailService
             }
             app.UseHttpsRedirection();
             app.UseRouting();
-
+            app.UseCors("OpenPolicy");
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

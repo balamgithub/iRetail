@@ -5,9 +5,37 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="inputfiles\1_1_crop %28online-video-cutter.com%29.mp4" />
+    <None Remove="inputfiles\base64.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="inputfiles\1_1_crop (online-video-cutter.com).mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.0.0" />
+    <PackageReference Include="Google.Cloud.Firestore" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+    <PackageReference Include="Microsoft.Azure.ServiceBus" Version="5.1.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="inputfiles\base64.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="inputfiles\iretaildb-4bac09deb4f6.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="inputfiles\WatchCount.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
